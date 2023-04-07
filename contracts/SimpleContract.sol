@@ -2,7 +2,7 @@
 pragma solidity 0.8.18;
 
 contract SimpleContract {
-    uint number;
+    uint public number;
     string public name;
 
     function setNumber(uint _newNumber) public {

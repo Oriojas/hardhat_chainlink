@@ -7,7 +7,7 @@ async function main() {
 
   await simpleContract.deployed();
 
-  console.log("EL address del contrato es: ", simpleContract.address);
+  console.log("El address del contrato es: ", simpleContract.address);
 
   const tx = await simpleContract.setName("Oscar")
   const name = await simpleContract.name();

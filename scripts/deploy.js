@@ -12,15 +12,15 @@ async function main() {
 
   const lockedAmount = hre.ethers.utils.parseEther("0.001");
 
-  const Lock = await hre.ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+  const Lock = await hre.ethers.getContractFactory("Lock"); // para acceder al contrato
+  const lock = await Lock.deploy(unlockTime, { value: lockedAmount }); // se acceden a los parámetros que solicita en contrato en el constructor
 
   await lock.deployed();
 
   console.log(
     `Lock with ${ethers.utils.formatEther(
       lockedAmount
-    )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
+    )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}` // lock.address la dirección del contrato
   );
 }
 

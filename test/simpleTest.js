@@ -15,17 +15,22 @@ describe("Basic test bootcamp", function(){
     }
 
     describe("Deployment", function(){
-        it("todo bien", async function(){
+        it("Deploy OK", async function(){
             const {simple} = await deploySmartContract();
             console.log("Dirección: ", simple.address);
             expect(simple.address).to.not.be.null;
         });
-        it("todo bien", async function(){
+        it("Name OK", async function(){
             const {simple} = await deploySmartContract();
-            const tx = await simple.setName("Esto");
+            const tx1 = await simple.setName("Esto");
             const name = await simple.name();
-            expect(name).to.be.equal("Esto")
-
-        })
+            expect(name).to.be.equal("Esto")        
+        });
+        it("Number OK", async function(){
+            const {simple} = await deploySmartContract();
+            const tx2 = await simple.setNumber("50");
+            const number = await simple.number();
+            expect(number).to.be.equal("50")        
+        });
     })
 })
