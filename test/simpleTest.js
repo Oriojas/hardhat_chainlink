@@ -28,9 +28,9 @@ describe("Basic test bootcamp", function(){
         });
         it("Number OK", async function(){
             const {simple} = await deploySmartContract();
-            const tx2 = await simple.setNumber("50");
+            const tx2 = await simple.setNumber(50);
             const number = await simple.number();
-            expect(number).to.be.equal("50")        
+            expect(number).to.be.equal(50)        
         });
     })
 })
